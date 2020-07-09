@@ -6,22 +6,21 @@ const types = ["B", "Y", "Q", "R", "E", "P", "G", "D"];
 
 const Choices = (props) => {
   return (
-    <>
-      <Container>
-        {types.map((type) => (
-          <TypeContainer color={type} key={type}>
-            {Array.from(Array(6), (_, i) => i + 1).map((index) => (
-              <Gem
-                key={type + index}
-                type={type}
-                index={index}
-                handleClick={() => props.handleClick(type, index)}
-              />
-            ))}
-          </TypeContainer>
-        ))}
-      </Container>
-    </>
+    <Container>
+      {types.map((type) => (
+        <TypeContainer color={type} key={type}>
+          {Array.from(Array(6), (_, i) => i + 1).map((index) => (
+            <Gem
+              key={type + index}
+              type={type}
+              index={index}
+              choices={props.choices}
+              handleClick={() => props.handleClick(type, index)}
+            />
+          ))}
+        </TypeContainer>
+      ))}
+    </Container>
   );
 };
 

@@ -9,7 +9,7 @@ const Choices = (props) => {
     <Container>
       {types.map((type) => (
         <TypeContainer color={type} key={type}>
-          {Array.from(Array(6), (_, i) => i + 1).map((index) => (
+          {Array.from(Array(5), (_, i) => i + 1).map((index) => (
             <Gem
               key={type + index}
               type={type}
